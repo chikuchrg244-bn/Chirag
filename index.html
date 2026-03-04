@@ -285,7 +285,7 @@ Happy 1 Year Anniversary My Love 💖
 
 let i=0;
 function startTyping(){
-let speed=40;
+let speed=35;
 let target=document.getElementById("typedLetter");
 target.innerHTML="";
 i=0;
@@ -322,7 +322,7 @@ setInterval(()=>{
 slides[index].classList.remove("active");
 index=(index+1)%slides.length;
 slides[index].classList.add("active");
-},2500);
+},3000);
 
 /* Floating Hearts */
 setInterval(()=>{
@@ -331,8 +331,8 @@ heart.className="heart";
 heart.innerHTML="❤️";
 heart.style.left=Math.random()*100+"vw";
 document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-},800);
+setTimeout(()=>heart.remove(),6500);
+},900);
 
 /* Romantic Particles */
 for(let i=0;i<25;i++){
@@ -354,4 +354,5 @@ document.body.appendChild(p);
 </body>
 
 </html>
+
 
