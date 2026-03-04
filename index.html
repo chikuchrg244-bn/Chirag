@@ -214,7 +214,40 @@ You are my happiness, my peace, my forever 💕
 <br>
 <button onclick="goProposal()">Continue ❤️</button>
 </div>
+  
+<!-- LOVING QUESTION BUTTON -->
+<div style="text-align:center; margin:20px 0;">
+  <button onclick="showLovingQuestion()" style="font-size:18px; padding:10px 20px; border-radius:10px; background-color:pink; color:white; border:none; cursor:pointer;">
+    Answer a Sweet Question ❤️
+  </button>
+</div>
 
+<!-- LOVING QUESTION POPUP -->
+<div id="lovingQuestion" class="section" style="display:none; text-align:center; margin-top:30px;">
+  <h2>My Sweetheart ❤️</h2>
+  <p>Do you love me more today than yesterday? 💖</p>
+  <button onclick="answerLove(true)" style="font-size:16px; padding:8px 15px; border-radius:8px; background-color:#ff69b4; color:white; border:none; cursor:pointer;">
+    Yes 😍
+  </button>
+  <button onclick="answerLove(false)" style="font-size:16px; padding:8px 15px; border-radius:8px; background-color:#ffc0cb; color:white; border:none; cursor:pointer;">
+    Hmm... 😅
+  </button>
+  <p id="loveAnswer" style="margin-top:20px; color:#ff69b4; font-size:18px;"></p>
+</div>
+
+<script>
+  function showLovingQuestion() {
+    document.getElementById('lovingQuestion').style.display = 'block';
+  }
+
+  function answerLove(isYes) {
+    const answerText = isYes 
+      ? "Yay! I love you more every single day! 💕" 
+      : "Don't worry, I'll love you extra just for today! 😘";
+    document.getElementById('loveAnswer').innerText = answerText;
+  }
+</script>
+  
 <!-- PROPOSAL SECTION -->
 <div id="proposalSection" class="section">
 <h2>Nonaaa ❤️ <br> Will You Stay With Me Forever & Make Many More Anniversaries With Me? 💍</h2>
@@ -354,5 +387,6 @@ document.body.appendChild(p);
 </body>
 
 </html>
+
 
 
