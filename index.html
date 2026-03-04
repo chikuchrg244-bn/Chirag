@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 1 Year Anniversary Nonaaa ❤️ | 5 March Special</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+overflow:hidden;
+cursor:none;
+background: linear-gradient(135deg,#160022,#2e004f,#160022);
+background-size:300% 300%;
+animation:bgSmooth 15s ease infinite;
+}
+
+@keyframes bgSmooth{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%, rgba(255,105,180,0.25), transparent 45%),
+radial-gradient(circle at 80% 70%, rgba(186,85,211,0.25), transparent 45%);
+z-index:-1;
+animation:glowMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+from{transform:translate(-40px,-40px);}
+to{transform:translate(40px,40px);}
+}
+
+.section{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:700px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:30px;
+box-shadow:0 0 40px rgba(255,105,180,0.4);
+}
+
+.show{display:block;}
+
+input{
+padding:10px;
+border-radius:20px;
+border:none;
+outline:none;
+text-align:center;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff007f;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.2);
+}
+
+.slider{
+position:relative;
+width:100%;
+max-width:400px;
+margin:auto;
+}
+
+.slider img{
+width:100%;
+border-radius:20px;
+position:absolute;
+opacity:0;
+transition:1s;
+box-shadow:0 0 20px hotpink;
+}
+
+.slider img.active{
+opacity:1;
+position:relative;
+}
+
+.heart{
+position:fixed;
+font-size:35px;
+animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+#noBtn{
+position:fixed;
+}
+
+#loveModal{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+background:black;
+padding:20px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+transition:0.5s;
+z-index:100;
+}
+
+#loveModal video{
+width:100%;
+border-radius:15px;
+}
+
+#loveModal p{
+color:pink;
+margin-top:10px;
+}
+.showModal{
+transform:translate(-50%,-50%) scale(1) !important;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Romantic Background Music -->
+<audio id="bgMusic" autoplay loop>
+<source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSWORD SECTION -->
+<div id="passwordSection" class="section show">
+<h2>Enter Password ❤️</h2>
+<input type="password" id="passwordInput">
+<br><br>
+<button onclick="checkPassword()">Unlock</button>
+</div>
+
+<!-- MAIN SECTION -->
+<div id="mainSection" class="section">
+<h2>Welcome My Love ❤️</h2>
+<h3 style="color:pink; margin-top:-10px;">
+Happy 1 Year Anniversary My Nonaaa ❤️ <br>
+5 March – The Most Beautiful Day Of My Life 💖
+</h3>
+<div style="font-size:60px;" id="bigHeart">❤️</div>
+<button onclick="showMemories()">See Our Memories</button>
+</div>
+
+<!-- MEMORIES SECTION -->
+<div id="memorySection" class="section">
+<h2>Our Beautiful Memories 💕</h2>
+
+<p style="font-size:15px; line-height:1.6; color:#ffd6f6;">
+From our first conversation to today, every single moment with you 
+has been magical Nonaaa ❤️  
+One year ago on 5th March, our journey started…  
+And today I just want to say —  
+You are my happiness, my peace, my forever 💕
+</p>
+
+<div class="slider">
+<img src="pic1.jpg" class="active">
+<img src="pic2.jpg">
+<img src="pic3.jpg">
+<img src="pic4.jpg">
+<img src="pic5.jpg">
+<img src="pic6.jpg">
+<img src="pic7.jpg">
+<img src="pic8.jpg">
+</div>
+<br>
+<button onclick="showProposal()">Next ❤️</button>
+</div>
+
+<!-- LOVE LETTER SECTION -->
+<div id="letterSection" class="section">
+<h2>A Letter For You Nonaaa 💌</h2>
+<p id="typedLetter" style="line-height:1.8; font-size:16px; color:#ffc0f3;"></p>
+<br>
+<button onclick="goProposal()">Continue ❤️</button>
+</div>
+
+<!-- PROPOSAL SECTION -->
+<div id="proposalSection" class="section">
+<h2>Nonaaa ❤️ <br> Will You Stay With Me Forever & Make Many More Anniversaries With Me? 💍</h2>
+<button onclick="yesForever()">Yes Forever ❤️</button>
+<button id="noBtn" onmouseover="moveNo()">No 😜</button>
+</div>
+
+<!-- MODAL -->
+<div id="loveModal">
+<video controls>
+<source src="yourvideo.mp4" type="video/mp4">
+</video>
+<p>
+Happy 1 Year Anniversary My Nonaaa ❤️ <br>
+5 March — Our Forever Begins 💖 <br>
+I Promise To Love You More Every Day
+</p>
+</div>
+
+<script>
+
+/* PASSWORD */
+function checkPassword(){
+let pass=document.getElementById("passwordInput").value;
+if(pass==="love"){
+document.getElementById("passwordSection").classList.remove("show");
+document.getElementById("mainSection").classList.add("show");
+
+let heart=document.getElementById("bigHeart");
+heart.style.transition="0.6s";
+heart.style.transform="scale(2)";
+setTimeout(()=>{heart.style.transform="scale(1)";},600);
+}
+}
+
+/* NAVIGATION */
+function showMemories(){
+document.getElementById("mainSection").classList.remove("show");
+document.getElementById("memorySection").classList.add("show");
+}
+
+function showProposal(){
+document.getElementById("memorySection").classList.remove("show");
+document.getElementById("letterSection").classList.add("show");
+startTyping();
+}
+
+function goProposal(){
+document.getElementById("letterSection").classList.remove("show");
+document.getElementById("proposalSection").classList.add("show");
+}
+
+/* TYPEWRITER EFFECT */
+let letterText = `My dearest Nonaaa ❤️
+
+Today marks 1 beautiful year of us.
+365 days of love, laughter, little fights, care, and countless memories.
+
+You entered my life like a blessing and turned my ordinary days into magical ones.
+Your smile heals me. Your voice comforts me. Your love completes me.
+
+No matter what happens in life,
+I promise to stand beside you, support you, protect you,
+and love you more with every passing day.
+
+Happy 1 Year Anniversary My Love 💖
+– Yours Forever`;
+
+let i=0;
+function startTyping(){
+let speed=40;
+let target=document.getElementById("typedLetter");
+target.innerHTML="";
+i=0;
+let typing=setInterval(()=>{
+if(i<letterText.length){
+target.innerHTML+=letterText.charAt(i);
+i++;
+}else{
+clearInterval(typing);
+}
+},speed);
+}
+
+/* NO BUTTON MOVE */
+function moveNo(){
+let btn=document.getElementById("noBtn");
+btn.style.top=Math.random()*90+"vh";
+btn.style.left=Math.random()*90+"vw";
+}
+
+/* YES FOREVER */
+function yesForever(){
+document.body.style.background="linear-gradient(135deg,#ff0066,#9900ff,#ff0066)";
+document.getElementById("loveModal").style.display="block";
+setTimeout(()=>{
+document.getElementById("loveModal").classList.add("showModal");
+},100);
+}
+
+/* SLIDER */
+let slides=document.querySelectorAll(".slider img");
+let index=0;
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},2500);
+
+/* Floating Hearts */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},800);
+
+/* Romantic Particles */
+for(let i=0;i<25;i++){
+let p=document.createElement("div");
+p.style.position="fixed";
+p.style.width="6px";
+p.style.height="6px";
+p.style.borderRadius="50%";
+p.style.background="pink";
+p.style.left=Math.random()*100+"vw";
+p.style.top=Math.random()*100+"vh";
+p.style.opacity="0.6";
+p.style.pointerEvents="none";
+p.style.animation="floatUp "+(10+Math.random()*6)+"s linear infinite";
+document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
